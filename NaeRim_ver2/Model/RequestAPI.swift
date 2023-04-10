@@ -26,7 +26,8 @@ struct Body: Codable {
 }
 
 // MARK: - Item
-struct Item: Codable, Hashable {
+struct Item: Codable, Hashable, Identifiable {
+	let id = UUID()
 	let prkplceNo, prkplceNm, prkplceSE, prkplceType: String
 	let rdnmadr, lnmadr, prkcmprt, feedingSE: String
 	let enforceSE, operDay, weekdayOperOpenHhmm, weekdayOperColseHhmm: String

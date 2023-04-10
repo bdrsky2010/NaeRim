@@ -13,11 +13,10 @@ struct ContentView: View {
 	
 	@State var showDetails = false
 	var body: some View {
-		LocalSearchListView()
 //		KakaoMapView()
 //		SearchTest()
 //		TestView2()
-//		CustomTabView()
+		CustomTabView()
 //		ScrollView {
 //			Toggle(isOn: $showDetails) {
 //				Text("Fetch Data")

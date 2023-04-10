@@ -62,18 +62,16 @@
 		7B9A578929E0395A00FC8F41 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9A578829E0395A00FC8F41 /* libc++.tbd */; };
 		7B9A578B29E0396D00FC8F41 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9A578A29E0396D00FC8F41 /* libxml2.tbd */; };
 		7B9A578D29E0397B00FC8F41 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9A578C29E0397B00FC8F41 /* libsqlite3.tbd */; };
-		7B9A578F29E0407500FC8F41 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A578E29E0407500FC8F41 /* LocationData.swift */; };
 		7B9A579129E040DE00FC8F41 /* KLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A579029E040DE00FC8F41 /* KLDocument.swift */; };
-		7B9A579329E0434300FC8F41 /* DetailListCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A579229E0434300FC8F41 /* DetailListCellData.swift */; };
 		7B9A579529E0751100FC8F41 /* KakaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A579429E0751100FC8F41 /* KakaoMapView.swift */; };
-		7B9A579829E082A500FC8F41 /* LocalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A579729E082A500FC8F41 /* LocalAPI.swift */; };
 		7B9A579B29E1841B00FC8F41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B9A579A29E1841B00FC8F41 /* Alamofire */; };
 		7B9A579E29E1AD9700FC8F41 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7B9A579D29E1AD9700FC8F41 /* SwiftyJSON */; };
 		7B9A57A029E1AFFD00FC8F41 /* LocalSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A579F29E1AFFD00FC8F41 /* LocalSearchListView.swift */; };
+		7B9A57AA29E43D9F00FC8F41 /* KeyWordSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A57A929E43D9F00FC8F41 /* KeyWordSearch.swift */; };
 		7BD5A7F329D09609005F6110 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5A7F229D09609005F6110 /* CustomTabView.swift */; };
 		7BD5A7F729D1B4CA005F6110 /* ParkingLotInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5A7F629D1B4CA005F6110 /* ParkingLotInfoView.swift */; };
 		7BD5A7FB29D1B868005F6110 /* PopupPrkInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5A7FA29D1B868005F6110 /* PopupPrkInfoView.swift */; };
-		7BD5A7FD29D2EFF4005F6110 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5A7FC29D2EFF4005F6110 /* TestView.swift */; };
+		7BD5A7FD29D2EFF4005F6110 /* AppleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5A7FC29D2EFF4005F6110 /* AppleMapView.swift */; };
 		7BE7AE7329D5959300BBFA52 /* PopupMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE7AE7229D5959300BBFA52 /* PopupMap.swift */; };
 		7BE7AE7629D599C100BBFA52 /* PlaceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE7AE7529D599C100BBFA52 /* PlaceSearchService.swift */; };
 		7EE7D8EE743091E817A8ACDE /* Pods_NaeRim_ver2_NaeRim_ver2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1506FBA25EA8BA76E7E8AB /* Pods_NaeRim_ver2_NaeRim_ver2UITests.framework */; };
@@ -168,16 +166,14 @@
 		7B9A578829E0395A00FC8F41 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		7B9A578A29E0396D00FC8F41 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7B9A578C29E0397B00FC8F41 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		7B9A578E29E0407500FC8F41 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		7B9A579029E040DE00FC8F41 /* KLDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KLDocument.swift; sourceTree = "<group>"; };
-		7B9A579229E0434300FC8F41 /* DetailListCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListCellData.swift; sourceTree = "<group>"; };
 		7B9A579429E0751100FC8F41 /* KakaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapView.swift; sourceTree = "<group>"; };
-		7B9A579729E082A500FC8F41 /* LocalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAPI.swift; sourceTree = "<group>"; };
 		7B9A579F29E1AFFD00FC8F41 /* LocalSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchListView.swift; sourceTree = "<group>"; };
+		7B9A57A929E43D9F00FC8F41 /* KeyWordSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWordSearch.swift; sourceTree = "<group>"; };
 		7BD5A7F229D09609005F6110 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		7BD5A7F629D1B4CA005F6110 /* ParkingLotInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotInfoView.swift; sourceTree = "<group>"; };
 		7BD5A7FA29D1B868005F6110 /* PopupPrkInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPrkInfoView.swift; sourceTree = "<group>"; };
-		7BD5A7FC29D2EFF4005F6110 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		7BD5A7FC29D2EFF4005F6110 /* AppleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapView.swift; sourceTree = "<group>"; };
 		7BE7AE7229D5959300BBFA52 /* PopupMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMap.swift; sourceTree = "<group>"; };
 		7BE7AE7529D599C100BBFA52 /* PlaceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchService.swift; sourceTree = "<group>"; };
 		915A89CC23FCCDE976EADE7E /* Pods-NaeRim_ver2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaeRim_ver2.release.xcconfig"; path = "Target Support Files/Pods-NaeRim_ver2/Pods-NaeRim_ver2.release.xcconfig"; sourceTree = "<group>"; };
@@ -352,8 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9A579029E040DE00FC8F41 /* KLDocument.swift */,
-				7B9A579229E0434300FC8F41 /* DetailListCellData.swift */,
-				7B9A579729E082A500FC8F41 /* LocalAPI.swift */,
+				7B9A57A929E43D9F00FC8F41 /* KeyWordSearch.swift */,
 			);
 			path = KakaoLocalAPI;
 			sourceTree = "<group>";
@@ -373,7 +368,6 @@
 				7B9A579629E0826C00FC8F41 /* KakaoLocalAPI */,
 				7B33003929CD91AB008D69EB /* RequestAPI.swift */,
 				7B9A573529DAD6B200FC8F41 /* ServerTest.swift */,
-				7B9A578E29E0407500FC8F41 /* LocationData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,7 +375,7 @@
 		7BE7AE7029D5951800BBFA52 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				7B33002629CAEEEF008D69EB /* MapView.swift */,
+				7BD5A7FC29D2EFF4005F6110 /* AppleMapView.swift */,
 				7BE7AE7229D5959300BBFA52 /* PopupMap.swift */,
 				7B9A579429E0751100FC8F41 /* KakaoMapView.swift */,
 			);
@@ -400,7 +394,7 @@
 		7BE7AE7429D5977D00BBFA52 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				7BD5A7FC29D2EFF4005F6110 /* TestView.swift */,
+				7B33002629CAEEEF008D69EB /* MapView.swift */,
 				7BD5A7F229D09609005F6110 /* CustomTabView.swift */,
 				7B33002A29CB4576008D69EB /* ListView.swift */,
 				7B33002B29CB4576008D69EB /* ListView2.swift */,
@@ -739,19 +733,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9A578F29E0407500FC8F41 /* LocationData.swift in Sources */,
 				7B33003029CC419C008D69EB /* SearchBar.swift in Sources */,
 				7B9A573D29DEDB6800FC8F41 /* LocationManager.swift in Sources */,
 				7B9A573B29DDD8D100FC8F41 /* SearchTest.swift in Sources */,
-				7B9A579829E082A500FC8F41 /* LocalAPI.swift in Sources */,
 				7B9A573629DAD6B200FC8F41 /* ServerTest.swift in Sources */,
 				7BD5A7F729D1B4CA005F6110 /* ParkingLotInfoView.swift in Sources */,
 				7B33003A29CD91AB008D69EB /* RequestAPI.swift in Sources */,
 				7BD5A7F329D09609005F6110 /* CustomTabView.swift in Sources */,
-				7B9A579329E0434300FC8F41 /* DetailListCellData.swift in Sources */,
 				7B9A579529E0751100FC8F41 /* KakaoMapView.swift in Sources */,
+				7B9A57AA29E43D9F00FC8F41 /* KeyWordSearch.swift in Sources */,
 				7B33FFFF29CAEEB2008D69EB /* ContentView.swift in Sources */,
-				7BD5A7FD29D2EFF4005F6110 /* TestView.swift in Sources */,
+				7BD5A7FD29D2EFF4005F6110 /* AppleMapView.swift in Sources */,
 				7B33002729CAEEEF008D69EB /* MapView.swift in Sources */,
 				7B33002C29CB4576008D69EB /* ListView.swift in Sources */,
 				7B33003129CC419C008D69EB /* SearchView.swift in Sources */,

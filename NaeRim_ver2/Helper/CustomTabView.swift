@@ -17,10 +17,10 @@ struct CustomTabView: View {
 	var body: some View {
 		NavigationView {
 			ZStack {
-				TestView()
+				AppleMapView()
 					.padding(.bottom, 50)
 				VStack {
-					SearchView()
+					LocalSearchListView()
 						.padding(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
 					Spacer()
 				}

@@ -105,6 +105,7 @@ struct MapView: View {
 	private func configureLocationManager() {
 		
 	}
+	
 }
 
 struct MapView_Previews: PreviewProvider {

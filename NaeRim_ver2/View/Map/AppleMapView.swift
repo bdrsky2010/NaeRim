@@ -8,14 +8,14 @@
 import SwiftUI
 import CoreLocation
 
-struct TestView: View {
+struct AppleMapView: View {
     var body: some View {
 			MapView(coordinate: CLLocationCoordinate2D(latitude: 37.45174676480123, longitude: 129.16242146005413))
     }
 }
 
-struct TestView_Previews: PreviewProvider {
+struct AppleMapView_Previews: PreviewProvider {
     static var previews: some View {
-        TestView()
+			AppleMapView()
     }
 }

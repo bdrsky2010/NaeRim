@@ -33,22 +33,23 @@ struct PopupMap: View {
 	
 	private var region: Binding<MKCoordinateRegion> {
 		Binding {
-			let centre = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+			let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 			
 			if let span = span {
-				return MKCoordinateRegion(center: centre, span: span)
+				return MKCoordinateRegion(center: center, span: span)
 			} else {
-				return MKCoordinateRegion(center: centre, latitudinalMeters: initialLatitudinalMetres, longitudinalMeters: initialLongitudinalMetres)
+				return MKCoordinateRegion(center: center, latitudinalMeters: initialLatitudinalMetres, longitudinalMeters: initialLongitudinalMetres)
 			}
-		} set: { region in
-			latitude = region.center.latitude
-			longitude = region.center.longitude
-			span = region.span
+		}
+		set: { region in
+//			latitude = region.center.latitude
+//			longitude = region.center.longitude
+//			span = region.span
 		}
 	}
 	
 	var body: some View {
-		Map(coordinateRegion: region, interactionModes: [], showsUserLocation: true, annotationItems: [ParkingLoc(latitude: latitude, longitude: longitude)]) { location in
+		Map(coordinateRegion: region, interactionModes: [.all], showsUserLocation: true, annotationItems: [ParkingLoc(latitude: latitude, longitude: longitude)]) { location in
 			// Use MapAnnotation instead of MapMarker
 			MapAnnotation(coordinate: location.location) {
 				// Customize the image using Image
