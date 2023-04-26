@@ -47,7 +47,7 @@ struct ListView2: View {
 				self.multiSelection = Set<String>()
 				self.isEditMode.toggle()
 			}) {
-				Text("Edit")
+				Text("편집")
 					.foregroundColor(.black)
 			}
 		}
@@ -57,7 +57,7 @@ struct ListView2: View {
 				self.multiSelection = Set<String>()
 				self.isEditMode.toggle()
 			}) {
-				Text("Done")
+				Text("완료")
 					.foregroundColor(.black)
 			}
 		}

@@ -7,14 +7,16 @@
 
 import SwiftUI
 import ExytePopupView
+import CoreLocation
 
 struct ListView: View {
 	@State private var prkName = ""
 	@State private var latitude = 0.0
 	@State private var longitude = 0.0
-	
 	@State private var shouldShowPopup = false
 	@Binding var isShow: Bool
+	@Binding var aroundLocationName: String
+	@Binding var aroundLocationCoordinate: CLLocationCoordinate2D
 	
 	@State private var locations: [ParkingLocation] = [
 		ParkingLocation.init(prkName: "삼척시청주차장",latitude: 37.4496777, longitude: 129.166228),
@@ -33,6 +35,9 @@ struct ListView: View {
 						latitude = loc.latitude
 						longitude = loc.longitude
 						shouldShowPopup.toggle()
+						
+						aroundLocationName = loc.prkName
+						aroundLocationCoordinate = CLLocationCoordinate2D(latitude: loc.latitude, longitude: loc.longitude)
 					}
 			}
 			.popup(isPresented: $shouldShowPopup) {

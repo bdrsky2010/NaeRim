@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>717118882060-dcudb09b0hn4cr4anfknfn5suiq3ugka.apps.googleusercontent.com</string>
+	<string>1000333640770-v44031vr0hl6eni980oka4kkr6s5agrj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.717118882060-dcudb09b0hn4cr4anfknfn5suiq3ugka</string>
+	<string>com.googleusercontent.apps.1000333640770-v44031vr0hl6eni980oka4kkr6s5agrj</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAa0ioWCbEl5e4Zfd81pAldHTQK0TtHL1Y</string>
+	<string>AIzaSyBFtccQF4JcqcIZy5ExeOknMg2BDSLMY_U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>717118882060</string>
+	<string>1000333640770</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>kr.co.kmj.NaeRim-ver2</string>
 	<key>PROJECT_ID</key>
-	<string>naerim-d34ce</string>
+	<string>naerim-ksiomng</string>
 	<key>STORAGE_BUCKET</key>
-	<string>naerim-d34ce.appspot.com</string>
+	<string>naerim-ksiomng.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:717118882060:ios:8f791d639fe357bf058929</string>
+	<string>1:1000333640770:ios:908b1431f08ba573fad9db</string>
+	<key>DATABASE_URL</key>
+	<string>https://naerim-ksiomng-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

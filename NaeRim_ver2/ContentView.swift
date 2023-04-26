@@ -7,32 +7,20 @@
 
 import SwiftUI
 import CoreLocation
+import Firebase
 
 struct ContentView: View {
-	@StateObject private var network = RequestAPI.shared
-	
-	@State var showDetails = false
 	var body: some View {
-//		KakaoMapView()
-//		SearchTest()
-//		TestView2()
-		CustomTabView()
-//		ScrollView {
-//			Toggle(isOn: $showDetails) {
-//				Text("Fetch Data")
+//		VStack {
+//			Button("Load Data") {
+//				loadData()
 //			}
-//			.onChange(of: showDetails) { value in
-//				network.fetchData()
+//			List(items, id: \.prkplceNo) { item in
+//				Text(item.prkplceNm)
 //			}
-//			if showDetails {
-//				Text("\(network.lots[0].response.body.items)" as String)
-//			}
-//			Text("hello")
-//				.onAppear {
-//					network.fetchData()
-//				}
-			//Text("\(network.lots)" as String)
 //		}
+						CustomTabView()
+		//		ScrollView {
 	}
 }
 
