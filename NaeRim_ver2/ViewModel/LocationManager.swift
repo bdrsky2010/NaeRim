@@ -59,6 +59,11 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
 	
 	@Published var isChainging: Bool = false // 지도의 움직임 여부를 저장하는 프로퍼티
 	
+	@Published var isPressParkingInfo: Bool = false // 주변 주차장 Pin을 탭해서 버튼을 눌렀는 지 유무를 저장하는 프로퍼티
+	@Published var popupPrkNm: String = ""
+	@Published var popupLatitude: Double = 0.0
+	@Published var popupLongitude: Double = 0.0
+	
 	// MARK: User Location
 	@Published var userLocation: CLLocation?
 	@Published var currentGeoPoint: CLLocationCoordinate2D?
@@ -128,16 +133,16 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
 		let maximumLongitude = farWest.coordinate.longitude as Double
 		let minimumLongtitude = farEast.coordinate.longitude as Double
 		
-//		DispatchQueue.main.async {
-//			self.maximumLatitude = farSouth.coordinate.latitude as Double
-//			self.minimumLatitude = farNorth.coordinate.latitude as Double
-//			self.maximumLongitude = farWest.coordinate.longitude as Double
-//			self.minimumLongtitude = farEast.coordinate.longitude as Double
-//		}
-//		self.maximumLatitude = farSouth.coordinate.latitude as Double
-//		self.minimumLatitude = farNorth.coordinate.latitude as Double
-//		self.maximumLongitude = farWest.coordinate.longitude as Double
-//		self.minimumLongtitude = farEast.coordinate.longitude as Double
+		//		DispatchQueue.main.async {
+		//			self.maximumLatitude = farSouth.coordinate.latitude as Double
+		//			self.minimumLatitude = farNorth.coordinate.latitude as Double
+		//			self.maximumLongitude = farWest.coordinate.longitude as Double
+		//			self.minimumLongtitude = farEast.coordinate.longitude as Double
+		//		}
+		//		self.maximumLatitude = farSouth.coordinate.latitude as Double
+		//		self.minimumLatitude = farNorth.coordinate.latitude as Double
+		//		self.maximumLongitude = farWest.coordinate.longitude as Double
+		//		self.minimumLongtitude = farEast.coordinate.longitude as Double
 		
 		let coordinatesDic = [
 			"minimumLatitude": minimumLatitude,
@@ -199,19 +204,32 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
 			self.currentAddress = "\(placemark.locality ?? "") \(placemark.subLocality ?? "")"
 		}
 	}
-	// MARK: 검색한 위치에 Pin 꽂아주기
+	
+	// MARK: 검색한 위치에 Pin 출력 메서드
 	func addPin(_ placeName: String, _ latitude: Double, _ longitude: Double) {
-		let currentPin = MKPointAnnotation()
-		currentPin.title = currentAroundLocationName
-		currentPin.coordinate = CLLocationCoordinate2D(latitude: currentAroundGeoPoint?.latitude ?? 0.0, longitude: currentAroundGeoPoint?.longitude ?? 0.0)
-		mapView.removeAnnotation(currentPin)
-		
 		print("addPin")
 		let pin = MKPointAnnotation()
 		pin.title = placeName
 		pin.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+		pin.subtitle = "장소검색"
 		self.currentAroundGeoPoint = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 		self.currentAroundLocationName = placeName
+		mapView.removeAnnotations(mapView.annotations.filter { item in
+			item.subtitle == "장소검색"
+		})
+		mapView.addAnnotation(pin)
+	}
+	
+	// MARK: 주변 주차장 위치에 Pin 출력 메서드
+	func parkingLotAddPin(_ placeName: String, _ latitude: Double, _ longitude: Double) {
+		print("addPin")
+		let pin = MKPointAnnotation()
+		pin.title = placeName
+		pin.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+		pin.subtitle = "주변주차장"
+		self.currentAroundGeoPoint = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+		self.currentAroundLocationName = placeName
+		
 		mapView.addAnnotation(pin)
 	}
 	
@@ -228,30 +246,127 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
 		} else {
 			annotationView?.annotation = annotation
 		}
-		
-		let image = UIImage(named: "point_icon")
-		let scaledImageSize = CGSize(width: 40, height: 40)
-		
-		let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
-		let scaledImage = renderer.image { _ in
-			image?.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+		annotationView?.isEnabled = true
+		annotationView?.canShowCallout = true
+		if annotation.subtitle == "주변주차장" {
+			annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
 		}
-		annotationView?.image = scaledImage
+		
+		if annotation.subtitle == "주변주차장" {
+			let image = UIImage(named: "parking_icon")
+			let scaledImageSize = CGSize(width: 40, height: 40)
+			
+			let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
+			let scaledImage = renderer.image { _ in
+				image?.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+			}
+			annotationView?.image = scaledImage
+			
+		} else if annotation.subtitle == "장소검색" {
+			let image = UIImage(named: "point_icon")
+			let scaledImageSize = CGSize(width: 40, height: 40)
+			
+			let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
+			let scaledImage = renderer.image { _ in
+				image?.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+			}
+			annotationView?.image = scaledImage
+		} else if annotation.subtitle == "출발" {
+			let image = UIImage(named: "route_b")
+			let scaledImageSize = CGSize(width: 40, height: 40)
+			
+			let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
+			let scaledImage = renderer.image { _ in
+				image?.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+			}
+			annotationView?.image = scaledImage
+		} else if annotation.subtitle == "도착" {
+			let image = UIImage(named: "route_r")
+			let scaledImageSize = CGSize(width: 40, height: 40)
+			
+			let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
+			let scaledImage = renderer.image { _ in
+				image?.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+			}
+			annotationView?.image = scaledImage
+		}
 		
 		return annotationView
 	}
-}
-
-extension UIImage {
-	func resized(to size: CGSize) -> UIImage {
-		return UIGraphicsImageRenderer(size: size).image { _ in
-			draw(in: CGRect(origin: .zero, size: size))
+	
+	// MARK: Pin 탭 후 버튼을 탭 했을 때 호출되는 메서드
+	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+		isPressParkingInfo = true
+		popupPrkNm = (view.annotation?.title ?? "")!
+		popupLatitude = view.annotation?.coordinate.latitude ?? 0.0
+		popupLongitude = view.annotation?.coordinate.longitude ?? 0.0
+		print(popupPrkNm)
+		print(popupLatitude)
+		print(popupLongitude)
+	}
+	
+	// MARK: 내 위치와 선택한 주차장에 대한 경로 출력
+	func showRoute(_ destinationLatitude: Double, _ destinationLongitude: Double) {
+		let sourcePlacemark = MKPlacemark(coordinate: currentGeoPoint ?? CLLocationCoordinate2D(latitude: 37.45174676480123, longitude: 129.16242146005413), addressDictionary: nil)
+		let destinationPlacemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: destinationLatitude, longitude: destinationLongitude), addressDictionary: nil)
+		
+		let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+		let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+		
+		let sourceAnnotation = MKPointAnnotation()
+		
+		if let location = sourcePlacemark.location {
+			sourceAnnotation.coordinate = location.coordinate
+			sourceAnnotation.subtitle = "출발"
 		}
+		
+		let destinationAnnotation = MKPointAnnotation()
+		
+		if let location = destinationPlacemark.location {
+			destinationAnnotation.coordinate = location.coordinate
+			destinationAnnotation.subtitle = "도착"
+		}
+		mapView.addAnnotations([sourceAnnotation, destinationAnnotation])
+		
+		let directionRequest = MKDirections.Request()
+		directionRequest.source = sourceMapItem
+		directionRequest.destination = destinationMapItem
+		directionRequest.transportType = .automobile
+		
+		// Calculate the direction
+		let directions = MKDirections(request: directionRequest)
+		
+		directions.calculate {
+			(response, error) -> Void in
+			
+			guard let response = response else {
+				if let error = error {
+					print("Error: \(error)")
+				}
+				
+				return
+			}
+			let route = response.routes[0]
+			self.mapView.addOverlay((route.polyline), level: MKOverlayLevel.aboveRoads)
+			let rect = route.polyline.boundingMapRect
+			self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
+		}
+	}
+	
+	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+		
+		let renderer = MKPolylineRenderer(overlay: overlay)
+		
+		renderer.strokeColor = UIColor(red: 17.0/255.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1)
+		
+		renderer.lineWidth = 5.0
+		
+		return renderer
 	}
 }
 
 extension CLLocationCoordinate2D: Equatable {}
 
 public func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
-		return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+	return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
 }

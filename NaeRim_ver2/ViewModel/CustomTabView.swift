@@ -17,12 +17,20 @@ struct CustomTabView: View {
 	@State private var aroundLocationCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
 	@State private var aroundLocationName: String = ""
 	
+	// 지도 중심 위치 변경 시 최대최소 위도, 경도를 담고있는 컬렉션
+	@State private var minMaxCoordinateDic: [String: Double] = [:]
+	@ObservedObject var requestAPI = RequestAPI()
+	
 	let tabbarImageName = ["map.fill", "bookmark.fill", "gearshape.fill"]
 	let tabbarName = ["주변", "즐겨찾기", "설정"]
 	var body: some View {
 		NavigationView {
 			ZStack {
-				MainMapView(aroundLocationName: $aroundLocationName, aroundLocationCoordinate: $aroundLocationCoordinate)
+				MainMapView(aroundLocationName: $aroundLocationName, aroundLocationCoordinate: $aroundLocationCoordinate, lots: $requestAPI.lots, minMaxCoordinateDic: $minMaxCoordinateDic)
+					.onAppear {
+						requestAPI.getParkingAPI()
+						print(minMaxCoordinateDic)
+					}
 					.padding(.bottom, 50)
 				VStack {
 					Spacer()
@@ -52,17 +60,6 @@ struct CustomTabView: View {
 							)
 							Spacer()
 						}
-//						NavigationLink(destination: Text("Detail View")) {
-//							VStack {
-//								Image(systemName: tabbarImageName[2])
-//									.font(.system(size: 20, weight: .bold))
-//									.foregroundColor(selectedIndex == 2 ? Color(.systemBlue) : Color(.tertiaryLabel))
-//								Text(tabbarName[2])
-//									.font(.system(size: 12, weight: .bold))
-//									.foregroundColor(selectedIndex == 2 ? Color(.systemBlue) : Color(.tertiaryLabel))
-//							}
-//						}
-//						Spacer()
 					}
 					.padding(.init(top: 10, leading: 0, bottom: 0, trailing: 0))
 					.background(Color.white)
@@ -70,7 +67,7 @@ struct CustomTabView: View {
 				
 				// MARK: 주변 주차장 뷰
 				.sheet(isPresented: $isShowAround) {
-					ListView(isShow: $isShowAround, aroundLocationName: $aroundLocationName, aroundLocationCoordinate: $aroundLocationCoordinate)
+					ListView(isShow: $isShowAround, aroundLocationName: $aroundLocationName, aroundLocationCoordinate: $aroundLocationCoordinate, lots: $requestAPI.lots, minMaxCoordinateDic: $minMaxCoordinateDic)
 					.presentationDetents([.medium, .large])
 					.presentationDragIndicator(.visible)
 				}
@@ -84,6 +81,7 @@ struct CustomTabView: View {
 		}
 	}
 }
+
 struct CustomTabView_Previews: PreviewProvider {
 	static var previews: some View {
 		CustomTabView()

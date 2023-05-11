@@ -20,6 +20,7 @@
 		7B33003A29CD91AB008D69EB /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B33003929CD91AB008D69EB /* RequestAPI.swift */; };
 		7B33FFFD29CAEEB2008D69EB /* NaeRim_ver2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B33FFFC29CAEEB2008D69EB /* NaeRim_ver2App.swift */; };
 		7B33FFFF29CAEEB2008D69EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B33FFFE29CAEEB2008D69EB /* ContentView.swift */; };
+		7B6D068529FED731006E241E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6D068429FED731006E241E /* Location.swift */; };
 		7B9A573D29DEDB6800FC8F41 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A573C29DEDB6800FC8F41 /* LocationManager.swift */; };
 		7B9A576529E0383B00FC8F41 /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B9A574029E0383B00FC8F41 /* map_pinup_custom@3x.png */; };
 		7B9A576629E0383B00FC8F41 /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B9A574129E0383B00FC8F41 /* map_pin_custom.png */; };
@@ -56,11 +57,13 @@
 		7B9A578B29E0396D00FC8F41 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9A578A29E0396D00FC8F41 /* libxml2.tbd */; };
 		7B9A578D29E0397B00FC8F41 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9A578C29E0397B00FC8F41 /* libsqlite3.tbd */; };
 		7B9A579129E040DE00FC8F41 /* KLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A579029E040DE00FC8F41 /* KLDocument.swift */; };
-		7B9A579529E0751100FC8F41 /* KakaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A579429E0751100FC8F41 /* KakaoMapView.swift */; };
 		7B9A579B29E1841B00FC8F41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B9A579A29E1841B00FC8F41 /* Alamofire */; };
 		7B9A579E29E1AD9700FC8F41 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7B9A579D29E1AD9700FC8F41 /* SwiftyJSON */; };
 		7B9A57A029E1AFFD00FC8F41 /* LocalSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A579F29E1AFFD00FC8F41 /* LocalSearchListView.swift */; };
 		7B9A57AA29E43D9F00FC8F41 /* KeyWordSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A57A929E43D9F00FC8F41 /* KeyWordSearch.swift */; };
+		7BC517C22A08B0B50003B0DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BC517C12A08B0B50003B0DB /* GoogleService-Info.plist */; };
+		7BC517C42A08B9E10003B0DB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC517C32A08B9E10003B0DB /* File.swift */; };
+		7BC517C62A08C5990003B0DB /* ShowRouteMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC517C52A08C5990003B0DB /* ShowRouteMap.swift */; };
 		7BCE59E129E7F21900F66DC2 /* EmptyShellSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE59E029E7F21900F66DC2 /* EmptyShellSearchBar.swift */; };
 		7BCE59E329E8075800F66DC2 /* LocalSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE59E229E8075800F66DC2 /* LocalSearchView.swift */; };
 		7BCE59E629E9408E00F66DC2 /* LocalSearchSelectMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE59E529E9408E00F66DC2 /* LocalSearchSelectMapView.swift */; };
@@ -73,7 +76,6 @@
 		7BCE59FE29EC44D500F66DC2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7BCE59FD29EC44D500F66DC2 /* FirebaseFirestore */; };
 		7BCE5A0029EC44D500F66DC2 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7BCE59FF29EC44D500F66DC2 /* FirebaseFirestoreCombine-Community */; };
 		7BCE5A0229EC44D500F66DC2 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7BCE5A0129EC44D500F66DC2 /* FirebaseFirestoreSwift */; };
-		7BCE5A0829EC8FFF00F66DC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BCE5A0729EC8FFF00F66DC2 /* GoogleService-Info.plist */; };
 		7BD5A7F329D09609005F6110 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5A7F229D09609005F6110 /* CustomTabView.swift */; };
 		7BD5A7F729D1B4CA005F6110 /* ParkingLotInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5A7F629D1B4CA005F6110 /* ParkingLotInfoView.swift */; };
 		7BD5A7FB29D1B868005F6110 /* PopupPrkInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD5A7FA29D1B868005F6110 /* PopupPrkInfoView.swift */; };
@@ -122,6 +124,7 @@
 		7B33FFF929CAEEB2008D69EB /* NaeRim_ver2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaeRim_ver2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B33FFFC29CAEEB2008D69EB /* NaeRim_ver2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaeRim_ver2App.swift; sourceTree = "<group>"; };
 		7B33FFFE29CAEEB2008D69EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7B6D068429FED731006E241E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7B9A573C29DEDB6800FC8F41 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7B9A574029E0383B00FC8F41 /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		7B9A574129E0383B00FC8F41 /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
@@ -167,9 +170,11 @@
 		7B9A578A29E0396D00FC8F41 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7B9A578C29E0397B00FC8F41 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7B9A579029E040DE00FC8F41 /* KLDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KLDocument.swift; sourceTree = "<group>"; };
-		7B9A579429E0751100FC8F41 /* KakaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapView.swift; sourceTree = "<group>"; };
 		7B9A579F29E1AFFD00FC8F41 /* LocalSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchListView.swift; sourceTree = "<group>"; };
 		7B9A57A929E43D9F00FC8F41 /* KeyWordSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWordSearch.swift; sourceTree = "<group>"; };
+		7BC517C12A08B0B50003B0DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7BC517C32A08B9E10003B0DB /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		7BC517C52A08C5990003B0DB /* ShowRouteMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRouteMap.swift; sourceTree = "<group>"; };
 		7BCE59D829E7DEB700F66DC2 /* TMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMapSDK.framework; path = "../../../../../Downloads/[iOS_SWIFT]TmapSDK_2.12/개발/TMapSDK.framework"; sourceTree = "<group>"; };
 		7BCE59E029E7F21900F66DC2 /* EmptyShellSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyShellSearchBar.swift; sourceTree = "<group>"; };
 		7BCE59E229E8075800F66DC2 /* LocalSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchView.swift; sourceTree = "<group>"; };
@@ -177,7 +182,6 @@
 		7BCE59E729E9A80B00F66DC2 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		7BCE59E929EB3A9000F66DC2 /* RefreshBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshBarButton.swift; sourceTree = "<group>"; };
 		7BCE59ED29EBD40300F66DC2 /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
-		7BCE5A0729EC8FFF00F66DC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7BD5A7F229D09609005F6110 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		7BD5A7F629D1B4CA005F6110 /* ParkingLotInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotInfoView.swift; sourceTree = "<group>"; };
 		7BD5A7FA29D1B868005F6110 /* PopupPrkInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPrkInfoView.swift; sourceTree = "<group>"; };
@@ -281,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				7B33003229CC5A77008D69EB /* NaeRim-ver2-Info.plist */,
-				7BCE5A0729EC8FFF00F66DC2 /* GoogleService-Info.plist */,
+				7BC517C12A08B0B50003B0DB /* GoogleService-Info.plist */,
 				7B33FFFC29CAEEB2008D69EB /* NaeRim_ver2App.swift */,
 				7B33FFFE29CAEEB2008D69EB /* ContentView.swift */,
 				7BE7AE6E29D5943E00BBFA52 /* View */,
@@ -385,7 +389,9 @@
 			children = (
 				7B9A579629E0826C00FC8F41 /* KakaoLocalAPI */,
 				7B33003929CD91AB008D69EB /* RequestAPI.swift */,
+				7BC517C32A08B9E10003B0DB /* File.swift */,
 				7BCE59ED29EBD40300F66DC2 /* FireStoreManager.swift */,
+				7B6D068429FED731006E241E /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,7 +401,6 @@
 			children = (
 				7BCE59E729E9A80B00F66DC2 /* MainMapView.swift */,
 				7BE7AE7229D5959300BBFA52 /* PopupMap.swift */,
-				7B9A579429E0751100FC8F41 /* KakaoMapView.swift */,
 				7BCE59E529E9408E00F66DC2 /* LocalSearchSelectMapView.swift */,
 			);
 			path = Map;
@@ -422,6 +427,7 @@
 				7B9A579F29E1AFFD00FC8F41 /* LocalSearchListView.swift */,
 				7BCE59E029E7F21900F66DC2 /* EmptyShellSearchBar.swift */,
 				7BCE59E929EB3A9000F66DC2 /* RefreshBarButton.swift */,
+				7BC517C52A08C5990003B0DB /* ShowRouteMap.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -612,7 +618,7 @@
 				7B9A576929E0383B00FC8F41 /* detail_button.png in Resources */,
 				7B9A577C29E0383B00FC8F41 /* noimage.png in Resources */,
 				7B9A576E29E0383B00FC8F41 /* th_line.png in Resources */,
-				7BCE5A0829EC8FFF00F66DC2 /* GoogleService-Info.plist in Resources */,
+				7BC517C22A08B0B50003B0DB /* GoogleService-Info.plist in Resources */,
 				7B9A577729E0383B00FC8F41 /* info_box_tail.png in Resources */,
 				7B9A576629E0383B00FC8F41 /* map_pin_custom.png in Resources */,
 				7B9A577629E0383B00FC8F41 /* map_pinup_custom.png in Resources */,
@@ -757,17 +763,19 @@
 			files = (
 				7B33003029CC419C008D69EB /* SearchBar.swift in Sources */,
 				7BCE59E329E8075800F66DC2 /* LocalSearchView.swift in Sources */,
+				7BC517C62A08C5990003B0DB /* ShowRouteMap.swift in Sources */,
 				7B9A573D29DEDB6800FC8F41 /* LocationManager.swift in Sources */,
 				7BD5A7F729D1B4CA005F6110 /* ParkingLotInfoView.swift in Sources */,
 				7B33003A29CD91AB008D69EB /* RequestAPI.swift in Sources */,
 				7BD5A7F329D09609005F6110 /* CustomTabView.swift in Sources */,
+				7BC517C42A08B9E10003B0DB /* File.swift in Sources */,
 				7BCE59E129E7F21900F66DC2 /* EmptyShellSearchBar.swift in Sources */,
-				7B9A579529E0751100FC8F41 /* KakaoMapView.swift in Sources */,
 				7B9A57AA29E43D9F00FC8F41 /* KeyWordSearch.swift in Sources */,
 				7B33FFFF29CAEEB2008D69EB /* ContentView.swift in Sources */,
 				7B33002729CAEEEF008D69EB /* MapView.swift in Sources */,
 				7BCE59E829E9A80B00F66DC2 /* MainMapView.swift in Sources */,
 				7B33002C29CB4576008D69EB /* ListView.swift in Sources */,
+				7B6D068529FED731006E241E /* Location.swift in Sources */,
 				7BD5A7FB29D1B868005F6110 /* PopupPrkInfoView.swift in Sources */,
 				7B33002D29CB4576008D69EB /* ListView2.swift in Sources */,
 				7B9A579129E040DE00FC8F41 /* KLDocument.swift in Sources */,

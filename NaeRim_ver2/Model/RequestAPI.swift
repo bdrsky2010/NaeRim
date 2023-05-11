@@ -10,8 +10,18 @@ import SwiftUI
 import Alamofire
 
 // MARK: - Welcome
-struct Welcome: Codable {
+struct Welcome: Codable, Hashable {
+	static func == (lhs: Welcome, rhs: Welcome) -> Bool {
+		lhs.response.body.items == rhs.response.body.items
+	}
+	
 	let response: Response
+}
+
+extension Welcome {
+		func hash(into hasher: inout Hasher) {
+				hasher.combine(response.body.items)
+		}
 }
 
 // MARK: - Response

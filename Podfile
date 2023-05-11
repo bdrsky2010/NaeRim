@@ -7,6 +7,7 @@ target 'NaeRim_ver2' do
 
   # Pods for NaeRim_ver2
   pod 'ExytePopupView'
+
   target 'NaeRim_ver2Tests' do
     inherit! :search_paths
     # Pods for testing

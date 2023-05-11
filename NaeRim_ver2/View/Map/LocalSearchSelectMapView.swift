@@ -30,59 +30,5 @@ struct LocalSearchSelectMapView: View {
 				locationManager.addPin(placeName, latitude, longitude)
 			}
 		let dic = locationManager.calcMaxMinCoordinate()
-//		let filteredItems = firebase.items.filter { item in
-//			let itemLatitude = item.latitude
-//			let itemLongitude = item.longitude
-//			return (itemLatitude >= dic["maximumLatitude"]! && itemLatitude <= dic["minimumLatitude"]!) &&
-//			(itemLongitude >= dic["maximumLongitude"]! && itemLongitude <= dic["minimumLongitude"]!)
-//		}
-//		NavigationView {
-//			List(filteredItems, id: \.prkplceNo) { item in
-//				Text(item.prkplceNm)
-//					.onAppear {
-//						locationManager.addPin(item.prkplceNm, item.latitude, item.longitude)
-//					}
-//					.onTapGesture {
-//						prkName = item.prkplceNm
-//						prkLatitude = item.latitude
-//						prkLongitude = item.longitude
-//						shouldShowPopup.toggle()
-//					}
-//			}
-//			.popup(isPresented: $shouldShowPopup) {
-//				PopupPrkInfoView(prkName: $prkName, latitude: $prkLatitude, longitude: $prkLongitude)
-//
-//			} customize: {
-//				$0.closeOnTapOutside(true).closeOnTap(false)
-//			}
-//			.listStyle(.inset)
-//			.navigationTitle("주변 주차장")
-//			.navigationBarTitleDisplayMode(.inline)
-//			.navigationBarItems(trailing: editButton)
-//		}
 	}
-	private var editButton: some View {
-		Menu {
-			Menu("주차장 구분") {
-				Button("없음", action: emptyFunc)
-				Button("공영", action: emptyFunc)
-				Button("민영", action: emptyFunc)
-			}
-			Menu("주차장 유형") {
-				Button("없음", action: emptyFunc)
-				Button("노외", action: emptyFunc)
-				Button("노상", action: emptyFunc)
-				Button("부설", action: emptyFunc)
-			}
-			Menu("요금정보") {
-				Button("없음", action: emptyFunc)
-				Button("유료", action: emptyFunc)
-				Button("무료", action: emptyFunc)
-				Button("혼합", action: emptyFunc)
-			}
-		} label: {
-			Image(systemName: "slider.horizontal.3")
-		}
-	}
-	func emptyFunc() { }
 }
